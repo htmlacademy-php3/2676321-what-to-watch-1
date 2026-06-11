@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "api/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "guzzlehttp/guzzle": "^7.0",
+    "psr/http-client": "^1.0"
+  }
+}
