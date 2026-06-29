@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
+use App\Http\Responses\SuccessResponse;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,9 +12,9 @@ class UserController extends Controller
      *
      * Endpoint: GET /api/user
      */
-    public function show(Request $request): Response
+    public function show(Request $request): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -22,8 +22,8 @@ class UserController extends Controller
      *
      * Endpoint: PATCH /api/user
      */
-    public function update(Request $request): Response
+    public function update(Request $request): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 }

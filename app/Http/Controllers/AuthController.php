@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
+use App\Http\Responses\SuccessResponse;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -12,9 +12,9 @@ class AuthController extends Controller
      *
      * Endpoint: POST /api/register
      */
-    public function register(Request $request): Response
+    public function register(Request $request): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -22,9 +22,9 @@ class AuthController extends Controller
      *
      * Endpoint: POST /api/login
      */
-    public function login(Request $request): Response
+    public function login(Request $request): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -32,8 +32,8 @@ class AuthController extends Controller
      *
      * Endpoint: POST /api/logout
      */
-    public function logout(Request $request): Response
+    public function logout(Request $request): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 }

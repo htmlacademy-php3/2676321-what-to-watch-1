@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
+use App\Http\Responses\SuccessResponse;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -12,9 +12,9 @@ class GenreController extends Controller
      *
      * Endpoint: GET /api/genres
      */
-    public function index(): Response
+    public function index(): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -22,8 +22,8 @@ class GenreController extends Controller
      *
      * Endpoint: PATCH /api/genres/{genre}
      */
-    public function update(Request $request, int $genreId): Response
+    public function update(Request $request, int $genreId): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 }

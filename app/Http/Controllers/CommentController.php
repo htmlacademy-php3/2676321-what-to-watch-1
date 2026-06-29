@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Responses\SuccessResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class CommentController extends Controller
 {
@@ -12,9 +12,9 @@ class CommentController extends Controller
      *
      * Endpoint: GET /api/comments/{id}
      */
-    public function index(int $filmId): Response
+    public function index(int $filmId): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -22,9 +22,9 @@ class CommentController extends Controller
      *
      * Endpoint: POST /api/comments/{id}
      */
-    public function store(Request $request, int $filmId): Response
+    public function store(Request $request, int $filmId): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -32,9 +32,9 @@ class CommentController extends Controller
      *
      * Endpoint: PATCH /api/comments/{comment}
      */
-    public function update(Request $request, int $commentId): Response
+    public function update(Request $request, int $commentId): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -42,8 +42,8 @@ class CommentController extends Controller
      *
      * Endpoint: DELETE /api/comments/{comment}
      */
-    public function destroy(int $commentId): Response
+    public function destroy(int $commentId): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 }
