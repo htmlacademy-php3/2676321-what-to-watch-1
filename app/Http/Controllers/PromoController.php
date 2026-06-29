@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use App\Http\Responses\SuccessResponse;
 
 class PromoController extends Controller
 {
@@ -12,9 +11,9 @@ class PromoController extends Controller
      *
      * Endpoint: GET /api/promo
      */
-    public function show(): Response
+    public function show(): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -22,8 +21,8 @@ class PromoController extends Controller
      *
      * Endpoint: POST /api/promo/{id}
      */
-    public function store(int $id): Response
+    public function store(int $id): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 }

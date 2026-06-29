@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Responses\SuccessResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class FavoriteController extends Controller
 {
@@ -12,9 +12,9 @@ class FavoriteController extends Controller
      *
      * Endpoint: GET /api/favorite
      */
-    public function index(Request $request): Response
+    public function index(Request $request): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -22,9 +22,9 @@ class FavoriteController extends Controller
      *
      * Endpoint: POST /api/films/{id}/favorite
      */
-    public function store(int $filmId): Response
+    public function store(int $filmId): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 
     /**
@@ -32,8 +32,8 @@ class FavoriteController extends Controller
      *
      * Endpoint: DELETE /api/films/{id}/favorite
      */
-    public function destroy(int $filmId): Response
+    public function destroy(int $filmId): SuccessResponse
     {
-        return response()->noContent();
+        return new SuccessResponse;
     }
 }
