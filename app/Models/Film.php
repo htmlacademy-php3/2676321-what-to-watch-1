@@ -50,6 +50,7 @@ class Film extends Model
     {
         return [
             'starring' => 'array',
+            'director' => 'array',
             'is_promo' => 'boolean',
         ];
     }
