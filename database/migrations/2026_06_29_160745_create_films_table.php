@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->decimal('rating', 4, 1)->nullable();
             $table->unsignedInteger('scores_count')->default(0);
-            $table->string('director')->nullable();
+            $table->json('director')->nullable();
             $table->json('starring')->nullable();
             $table->unsignedSmallInteger('run_time')->nullable();
             $table->unsignedSmallInteger('released')->nullable();
