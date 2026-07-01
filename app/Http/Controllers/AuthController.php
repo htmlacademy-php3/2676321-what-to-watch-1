@@ -26,7 +26,7 @@ class AuthController extends Controller
      */
     public function login(LoginRequest $request): SuccessResponse
     {
-        if (!Auth::attempt($request->validated())) {
+        if (! Auth::attempt($request->validated())) {
             abort(401, trans('auth.failed'));
         }
 
@@ -46,6 +46,6 @@ class AuthController extends Controller
     {
         $request->user()->tokens()->delete();
 
-        return new SuccessResponse();
+        return new SuccessResponse;
     }
 }
