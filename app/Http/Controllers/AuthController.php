@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Responses\SuccessResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -22,9 +24,17 @@ class AuthController extends Controller
      *
      * Endpoint: POST /api/login
      */
-    public function login(Request $request): SuccessResponse
+    public function login(LoginRequest $request): SuccessResponse
     {
-        return new SuccessResponse;
+        if (! Auth::attempt($request->validated())) {
+            abort(401, trans('auth.failed'));
+        }
+
+        $token = Auth::user()->createToken('auth-token');
+
+        return new SuccessResponse([
+            'token' => $token->plainTextToken,
+        ]);
     }
 
     /**
@@ -34,6 +44,8 @@ class AuthController extends Controller
      */
     public function logout(Request $request): SuccessResponse
     {
+        $request->user()->tokens()->delete();
+
         return new SuccessResponse;
     }
 }
